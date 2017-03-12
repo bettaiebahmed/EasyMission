@@ -30,9 +30,8 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-		RequestDispatcher view = request.getRequestDispatcher("Views/HomePage/Home.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("Views/HomePage/Home.xhtml");
 		view.forward(request, response);
-	
 	}
 
 	/**

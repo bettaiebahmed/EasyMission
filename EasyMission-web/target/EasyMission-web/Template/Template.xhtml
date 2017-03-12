@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"> 
+
+<h:head>
+ <title>Esprit</title>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+</h:head> 
+<h:body> 
+<div id="content">
+<div id="header">
+ <ui:insert name="header">
+ <ui:include src="header.xhtml" />
+ </ui:insert>
+</div>
+<div  id="mainMenu">
+<ui:insert name="mainMenu">
+ <ui:include src="mainMenu.xhtml" />
+ </ui:insert>
+
+</div>
+<div  id="sideMenu">
+<ui:insert name="sideMenu">
+ <ui:include src="sideMenu.xhtml" />
+ </ui:insert>
+</div>
+<div class="width75 floatLeft" id="mainPage">
+<ui:insert name="mainPage">
+MAinPage
+</ui:insert>
+</div>
+</div>
+<div id="footer">
+ <ui:insert name="footer">
+ <ui:include src="footer.xhtml" />
+ </ui:insert>
+</div>
+
+
+</h:body> 
+</html>
