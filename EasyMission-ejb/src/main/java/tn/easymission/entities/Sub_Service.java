@@ -2,6 +2,8 @@ package tn.easymission.entities;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -16,6 +18,8 @@ public class Sub_Service implements Serializable {
 	private int idSub_Service;
 	private String nameSub_Service;
 	private String description;
+	private Service service;
+	private List<Promotion>promotions;
 	private static final long serialVersionUID = 1L;
 
 	public Sub_Service() {
@@ -42,6 +46,20 @@ public class Sub_Service implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	@ManyToOne
+	public Service getService() {
+		return service;
+	}
+	public void setService(Service service) {
+		this.service = service;
+	}
+	@ManyToMany
+	public List<Promotion> getPromotions() {
+		return promotions;
+	}
+	public void setPromotions(List<Promotion> promotions) {
+		this.promotions = promotions;
 	}
    
 }

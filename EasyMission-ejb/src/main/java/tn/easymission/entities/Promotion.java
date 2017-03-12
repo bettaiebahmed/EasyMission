@@ -3,6 +3,8 @@ package tn.easymission.entities;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,6 +20,8 @@ public class Promotion implements Serializable {
 	private String description;
 	private Date dateDebut;
 	private Date dateFin;
+	private Admin admin;
+	private List<Sub_Service>sub_Services;
 	private static final long serialVersionUID = 1L;
 
 	public Promotion() {
@@ -51,6 +55,20 @@ public class Promotion implements Serializable {
 
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
+	}
+	@ManyToOne
+	public Admin getAdmin() {
+		return admin;
+	}
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	@ManyToMany(mappedBy="promotions",fetch=FetchType.EAGER)
+	public List<Sub_Service> getSub_Services() {
+		return sub_Services;
+	}
+	public void setSub_Services(List<Sub_Service> sub_Services) {
+		this.sub_Services = sub_Services;
 	}
    
 }

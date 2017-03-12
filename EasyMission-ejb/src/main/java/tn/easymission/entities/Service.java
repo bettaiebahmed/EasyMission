@@ -2,6 +2,8 @@ package tn.easymission.entities;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -17,6 +19,8 @@ public class Service implements Serializable {
 	private String nameService;
 	private String description;
 	private String categorie;
+	private Admin admin;
+	private List<Sub_Service>sub_Services;
 	private static final long serialVersionUID = 1L;
 
 	public Service() {
@@ -50,6 +54,20 @@ public class Service implements Serializable {
 
 	public void setCategorie(String categorie) {
 		this.categorie = categorie;
+	}
+	@ManyToOne
+	public Admin getAdmin() {
+		return admin;
+	}
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	@OneToMany(mappedBy = "service",fetch=FetchType.EAGER)
+	public List<Sub_Service> getSub_Services() {
+		return sub_Services;
+	}
+	public void setSub_Services(List<Sub_Service> sub_Services) {
+		this.sub_Services = sub_Services;
 	}
    
 }
