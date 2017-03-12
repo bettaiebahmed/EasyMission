@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Agent.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Sub_Service.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Client.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Forum.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Service.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Profile.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Admin.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Commentaire.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Promotion.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\User.java
+=======
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Client.java
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\User.java
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Notification.java
@@ -14,3 +26,4 @@ C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Candidature.java
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\CandidaturePk.java
 C:\Users\slim\workspace\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Offre.java
+>>>>>>> origin/SlimSiala

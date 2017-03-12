@@ -30,4 +30,24 @@
     <servlet-name>Home</servlet-name>
     <url-pattern>/Home</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin_Login</display-name>
+    <servlet-name>Admin_Login</servlet-name>
+    <servlet-class>tn.easymission.controllers.Admin_Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin_Login</servlet-name>
+    <url-pattern>/Admin_Login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminIndex</display-name>
+    <servlet-name>AdminIndex</servlet-name>
+    <servlet-class>tn.easymission.controllers.AdminIndex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndex</servlet-name>
+    <url-pattern>/AdminIndex</url-pattern>
+  </servlet-mapping>
 </web-app>
