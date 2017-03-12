@@ -1,3 +1,5 @@
 tn\easymission\controllers\AddClient.class
+tn\easymission\controllers\AdminIndex.class
 tn\easymission\controllers\Home.class
+tn\easymission\controllers\Admin_Login.class
 tn\easymission\controllers\Login.class

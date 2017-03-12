@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Admin_Login.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Home.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\AddClient.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\AdminIndex.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Login.java
+=======
+C:\Users\slim\workspace\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Login.java
+C:\Users\slim\workspace\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Home.java
+C:\Users\slim\workspace\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\AddClient.java
+>>>>>>> origin/SlimSiala

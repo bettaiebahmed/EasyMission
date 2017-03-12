@@ -1,0 +1,330 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+  <body>
+
+    <!-- Preloader -->
+    <div class="mask"><div id="loader"></div></div>
+    <!--/Preloader -->
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      
+
+
+      <!-- Make page fluid -->
+      <div class="row">
+        
+
+
+
+
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+          
+
+
+          <!-- Branding -->
+          <div class="navbar-header col-md-2">
+            <a class="navbar-brand" href="index.html">
+              <strong>Easy</strong> <span class="divider vertical"></span> Mission
+            </a>
+            <div class="sidebar-collapse">
+              <a href="#">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Branding end -->
+
+
+          <!-- .nav-collapse -->
+          <div class="navbar-collapse">
+            
+
+            
+
+            <!-- Content collapsing at 768px to sidebar -->
+            <div class="collapsing-content">
+
+
+
+
+           
+              <!-- Quick Actions end -->
+
+
+
+
+
+              <!-- Search -->
+              
+              <!-- Search end -->
+
+
+
+
+
+              <!-- User Controls -->
+              <div class="user-controls">
+                <ul>
+
+                 
+                  <li class="dropdown messages">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      <span class="badge badge-red" id="user-new-messages">3</span> John <strong>Douey</strong> <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="profile-photo">
+                      <img src="images/profile-photo.jpg" alt="" />
+                    </div>
+                    <ul class="dropdown-menu wide arrow red nopadding">
+                      <li><h1>You have <strong>3</strong> new messages</h1></li>
+
+                      <li>
+                        <a class="cyan" href="#">
+                          <div class="profile-photo">
+                            <img src="images/ici-avatar.jpg" alt="" />
+                          </div>
+                          <div class="message-info">
+                            <span class="sender">Ing. Imrich Kamarel</span>
+                            <span class="time">12 mins</span>
+                            <div class="message-content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="green" href="#">
+                          <div class="profile-photo">
+                            <img src="images/arnold-avatar.jpg" alt="" />
+                          </div>
+                          <div class="message-info">
+                            <span class="sender">Arnold Karlsberg</span>
+                            <span class="time">1 hour</span>
+                            <div class="message-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#">
+                          <div class="profile-photo">
+                            <img src="images/profile-photo.jpg" alt="" />
+                          </div>
+                          <div class="message-info">
+                            <span class="sender">John Douey</span>
+                            <span class="time">3 hours</span>
+                            <div class="message-content">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="red" href="#">
+                          <div class="profile-photo">
+                            <img src="images/peter-avatar.jpg" alt="" />
+                          </div>
+                          <div class="message-info">
+                            <span class="sender">Peter Kay</span>
+                            <span class="time">5 hours</span>
+                            <div class="message-content">Ut enim ad minim veniam, quis nostrud exercitation</div>
+                          </div>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a class="orange" href="#">
+                          <div class="profile-photo">
+                            <img src="images/george-avatar.jpg" alt="" />
+                          </div>
+                          <div class="message-info">
+                            <span class="sender">George McCain</span>
+                            <span class="time">6 hours</span>
+                            <div class="message-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+                          </div>
+                        </a>
+                      </li>
+
+
+                      <li><a href="#">Check all messages <i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                  </li>
+
+                  <li class="dropdown settings">
+                    <a class="dropdown-toggle options" data-toggle="dropdown" href="#">
+                      <i class="fa fa-cog"></i>
+                    </a>
+                    
+                    <ul class="dropdown-menu arrow">
+
+                      <li>
+                        <h3>Color schemes:</h3>
+                        <ul id="color-schemes">
+                          <li><a href="#" class="brownish-scheme" title="Brownish"></a></li>
+                          <li><a href="#" class="darkgrey-scheme" title="Dark Grey"></a></li>
+                          <li><a href="#" class="lightgrey-scheme" title="Light Grey"></a></li>
+                          <li><a href="#" class="cyan-scheme" title="Cyan"></a></li>
+                          <li><a href="#" class="red-scheme" title="Red"></a></li>
+                          <li><a href="#" class="orange-scheme" title="Orange"></a></li>
+                          <li><a href="#" class="green-scheme" title="Green"></a></li>
+                          <li><a href="#" class="amethyst-scheme" title="Amethyst"></a></li>
+                        </ul>
+                      </li>
+
+                      <li class="divider"></li>
+
+                      <li>
+                        <a href="#"><i class="fa fa-user"></i> Profile</a>
+                      </li>
+
+                      <li>
+                        <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
+                      </li>
+
+                      <li>
+                        <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-red" id="user-inbox">3</span></a>
+                      </li>
+
+                      <li class="divider"></li>
+
+                      <li>
+                        <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- User Controls end -->
+
+            
+
+
+
+            </div>
+            <!-- /Content collapsing at 768px to sidebar -->
+
+
+
+            <!-- Sidebar -->
+            <ul class="nav navbar-nav side-nav" id="navigation">
+              <li class="collapsed-content">
+                <!-- Collapsed content pasting here at 768px -->
+              </li>
+              <li class="user-status status-online" id="user-status">
+                <div class="profile-photo">
+                  <img src="images/profile-photo.jpg" alt="" />
+                </div>
+                <div class="user">
+                  John <strong>Douey</strong>
+                  <span class="role">Administrator</span>
+                  <div class="status">
+                    <ul>
+                      <li class="dropdown change-status">
+                        <a class="dropdown-toggle my-status" data-toggle="dropdown" href="#">Online</a>
+                        
+                        <ul class="dropdown-menu arrow">
+                          <li>
+                            <a href="#" id="status-online" data-status="status-online">Online</a>
+                          </li>
+
+                          <li>
+                            <a href="#" id="status-away" data-status="status-away">Away</a>
+                          </li>
+
+                          <li>
+                            <a href="#" id="status-invisible" data-status="status-invisible">Invisible</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    
+                  </div>
+                </div>
+              </li>
+             
+
+
+
+</ul>
+</div></div>
+
+          </div>
+          <!--/.nav-collapse -->
+
+
+
+
+
+        </div>
+        <!-- Fixed navbar end -->
+        
+
+
+
+
+        
+        <!-- Page content -->
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Wrap all page content end -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&amp;skin=sons-of-obsidian"></script>
+
+    <script src="js/plugins/jquery.nicescroll.min.js"></script>
+
+    <script src="js/plugins/blockui/jquery.blockUI.js"></script>
+
+    <script src="js/plugins/jquery.easypiechart.min.js"></script>
+
+    <script src="js/plugins/jquery.animateNumbers.js"></script>
+
+    <script src="js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.time.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.selection.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.animator.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.orderBars.js"></script>
+
+    <script src="js/plugins/rickshaw/raphael-min.js"></script> 
+    <script src="js/plugins/rickshaw/d3.v2.js"></script>
+    <script src="js/plugins/rickshaw/rickshaw.min.js"></script>
+
+    <script src="js/plugins/skycons/skycons.js"></script>
+
+    <script src="js/plugins/jquery.sparkline.min.js"></script>
+
+    <script src="js/plugins/summernote/summernote.min.js"></script>
+
+    <script src="js/plugins/chosen/chosen.jquery.min.js"></script>
+
+    <script src="js/plugins/owl-carousel/owl.carousel.min.js"></script>
+
+    <script src="js/plugins/tabdrop/bootstrap-tabdrop.min.js"></script>
+
+    <script src="js/charts.js"></script>
+    <script src="js/minoral.min.js"></script>
+
+   
+  </body>
+  </html>
