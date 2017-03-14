@@ -71,4 +71,14 @@
     <servlet-name>ResumeDetails</servlet-name>
     <url-pattern>/ResumeDetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>gestionService</display-name>
+    <servlet-name>gestionService</servlet-name>
+    <servlet-class>tn.easymission.controllers.gestionService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>gestionService</servlet-name>
+    <url-pattern>/gestionService</url-pattern>
+  </servlet-mapping>
 </web-app>
