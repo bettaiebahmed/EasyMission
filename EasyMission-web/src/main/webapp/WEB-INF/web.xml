@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>EasyMission-web</display-name>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>tn.easymission.filters.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/index/*</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>/index/</welcome-file>
+  </welcome-file-list>
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -49,5 +60,15 @@
   <servlet-mapping>
     <servlet-name>AdminIndex</servlet-name>
     <url-pattern>/AdminIndex</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResumeDetails</display-name>
+    <servlet-name>ResumeDetails</servlet-name>
+    <servlet-class>tn.easymission.controllers.ResumeDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResumeDetails</servlet-name>
+    <url-pattern>/ResumeDetails</url-pattern>
   </servlet-mapping>
 </web-app>

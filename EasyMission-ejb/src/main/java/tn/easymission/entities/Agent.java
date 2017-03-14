@@ -16,8 +16,10 @@ import tn.easymission.entities.User;
 public class Agent extends User implements Serializable {
 
 	
+	private String title;
 	private String feedBack;
-	private String workHistory;
+	private String location;
+	private List<EmployementHistory> workHistory;
 	private int rating;
 	private List<Offre>offres;
 	private List<Candidature> candidatures;
@@ -28,6 +30,23 @@ public class Agent extends User implements Serializable {
 	public Agent() {
 		super();
 	}   
+	
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String getFeedBack() {
 		return this.feedBack;
 	}
@@ -35,13 +54,17 @@ public class Agent extends User implements Serializable {
 	public void setFeedBack(String feedBack) {
 		this.feedBack = feedBack;
 	}   
-	public String getWorkHistory() {
-		return this.workHistory;
+	
+	
+	@OneToMany(mappedBy = "agent")
+	public List<EmployementHistory> getWorkHistory() {
+		return workHistory;
 	}
 
-	public void setWorkHistory(String workHistory) {
+	public void setWorkHistory(List<EmployementHistory> workHistory) {
 		this.workHistory = workHistory;
-	}   
+	}
+
 	public int getRating() {
 		return this.rating;
 	}
