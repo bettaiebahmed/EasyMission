@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">  
+
+    	<ui:composition template="/Layout/layout.xhtml">
+    	
+    	<ui:define name="header">
+   
+
+  
+<body>
+   <header class="main-header">
+
+
+        <!-- main navbar -->
+        <nav class="navbar navbar-default main-navbar hidden-sm hidden-xs">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <ul class="nav navbar-nav">
+                <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                    <li><a href="error_404.html">Error 404</a></li>
+                    <li><a href="shortcode.html">Short Code</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="resume_list.html">Find Resumes</a></li>
+                    <li><a href="resume_details.html">Resume Details</a></li>
+                    <li><a href="job_post_2.html">Post a Job</a></li>
+                    <li><a href="company_page.html">Company Profile</a></li>
+                  </ul>
+                </li>
+              </ul>      
+             
+ <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="link-profile dropdown-toggle"  data-toggle="dropdown" >
+                    <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"/> #{myLogBean.login} <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="my_alerts.html"> My Alerts </a></li>
+                    <li><a href="my_notifications.html"> Notifications <span class="badge ">5</span></a></li>
+                    <li><a href="change_password.html"> Change Password</a></li>
+                  </ul>
+                </li>
+                <li class="link-btn"><a href="index.html"><span class="btn btn-theme  btn-pill btn-xs btn-line">Logout</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav><!-- end main navbar -->
+
+        <!-- mobile navbar -->
+        <div class="container">
+          <nav class="mobile-nav hidden-md hidden-lg">
+            <a href="#" class="btn-nav-toogle first">
+              <span class="bars"></span>
+              Menu
+            </a>
+            <div class="mobile-nav-block">
+              <h4>Navigation</h4>
+              <a href="#" class="btn-nav-toogle">
+                <span class="barsclose"></span>
+                Close
+              </a>      
+
+              <ul class="nav navbar-nav">
+                <li class=""><a href="job_list.html"><strong>Find a Job</strong></a></li>
+                <li class=""><a href="resume_list.html"><strong>Find Resumes</strong></a></li>
+                <li  class=""><a href="job_post_1.html"><strong>Post a Job</strong></a></li>
+                <li><a href="login.html"><strong>Login</strong></a></li>
+                <li><a href="register.html"><strong>Register</strong></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="blog.html">Articles &amp; Blog</a></li>
+                    <li><a href="terms_privacy.html">Terms &amp; Privacy</a></li>
+                    <li><a href="error_404.html">Error 404</a></li>
+                    <li><a href="shortcode.html">Short Code</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Features <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="job_list.html">Find a Job</a></li>
+                    <li><a href="job_details.html">Job Details</a></li>
+                    <li><a href="resume_list.html">Find Resumes</a></li>
+                    <li><a href="resume_details.html">Resume Details</a></li>
+                    <li><a href="job_post_2.html">Post a Job</a></li>
+                    <li><a href="company_page.html">Company Profile</a></li>
+                  </ul>
+                </li>
+              </ul>    
+            </div>
+          </nav>
+        </div><!-- mobile navbar -->
+        </header>
+        
+	   
+    </body>
+    	</ui:define>
+    	
+    	
+    	
+    	
+    	
+    	
+    	<ui:define name="content">
+<body>
+ <!-- body-content -->
+      <div class="body-content clearfix" >
+
+        <!-- link top -->
+        <div class="bg-color2 block-section-xs line-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 hidden-xs">
+                <div>Resume details :</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-right"><a href="#">&laquo; Go back to resume listings</a></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end link top -->
+
+        <div class="bg-color2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+
+                <!-- box item details -->
+                <div class="block-section box-item-details">
+                  <div class="resume-block">
+                    <div class="img-profile"><img src="./assets/theme/images/people/7.jpg" alt=""/></div>
+                    <div class="desc">
+                   
+                      <h2>Tibou</h2>
+                      <h4>PHP Developer</h4>
+                      <p>Chicago, IL</p>
+
+                      <h3 class="resume-sub-title"><span>Work Experience</span></h3>
+ <ui:repeat value="#{UserBean.verifier(param['id'])}"
+		var="e">
+                      <h4>#{e.title}</h4>
+                      <h5>#{e.location} </h5>
+                      <p  class="color-white-mute">#{e.dateStart} to #{e.dateEnd}</p>
+                      <h5>Responsibilities :</h5>
+                      <p>#{e.responsabilities}</p>
+                      <h5>Skills Used :</h5>
+                      <p>#{e.skills}</p>
+
+</ui:repeat>                      
+                    </div>
+                  </div>
+                </div><!-- end box item details -->
+
+
+              </div>
+              <div class="col-md-3">
+
+                <!-- box affix right -->
+                <div class="block-section " id="affix-box">
+                  <div class="text-right">
+                    <p><a href="#" class="btn btn-theme btn-line dark btn-block-xs">Save Resume</a></p>
+                    <p>Updated: February 16, 2015</p>
+                    <p><a href="#modal-apply"  data-toggle="modal" class="btn btn-theme btn-t-primary btn-block-xs">Forward by Email</a></p>
+                    <p><a href="#" class="btn btn-theme btn-t-primary btn-block-xs">Contact Bryon</a></p>
+                    <p><a href="#" class="btn btn-theme btn-t-primary btn-block-xs">Download This Resume</a></p>
+                    <p>Share This Resume <span class="space-inline-10"></span> :</p>
+                    <p class="share-btns">
+                      <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
+                      <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i></a>
+                      <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i></a>
+                      <a href="#" class="btn btn-warning"><i class="fa fa-pinterest"></i></a>
+                    </p>
+                  </div>
+                </div><!-- box affix right -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div><!--end body-content -->
+      
+      
+    	</body>
+    	</ui:define>
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	</ui:composition>
+    	
+
+
+</html>

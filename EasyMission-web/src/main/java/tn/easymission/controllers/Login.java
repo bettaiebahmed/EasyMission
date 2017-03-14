@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tn.easymission.beans.LogBean;
+
 /**
  * Servlet implementation class Home
  */
@@ -28,10 +30,21 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		 LogBean loginBean = (LogBean)((HttpServletRequest)request).getSession().getAttribute("myLogBean");
+         
+	        // For the first application request there is no loginBean in the session so user needs to log in
+	        // For other requests loginBean is present but we need to check if user has logged in successfully
+	        if (loginBean == null || !loginBean.isLoggedIn()) {
+	        	RequestDispatcher view = request.getRequestDispatcher("Views/Login/login.xhtml");
+	    		view.forward(request, response);    
+	        }
+	        else 
+	        {
+	        String contextPath = ((HttpServletRequest)request).getContextPath();
+         ((HttpServletResponse)response).sendRedirect(contextPath + "/index/");
+	        }
 		
-		RequestDispatcher view = request.getRequestDispatcher("Views/Login/login.xhtml");
-		view.forward(request, response);
+		
 	}
 
 	/**
