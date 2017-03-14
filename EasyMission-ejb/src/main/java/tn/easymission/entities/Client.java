@@ -17,6 +17,7 @@ public class Client extends User implements Serializable {
 
 	private ArrayList<Offre>offres;
 	private List<Candidature>candidatures;
+	private List<EmployementHistory> workHistory;
 	private Analyse analyse;
 	private List<Notification>notifications;
 	private static final long serialVersionUID = 1L;
@@ -65,5 +66,24 @@ public class Client extends User implements Serializable {
 	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
+
+	@OneToMany(mappedBy = "client")
+	public List<EmployementHistory> getWorkHistory() {
+		return workHistory;
+	}
+
+
+	public void setWorkHistory(List<EmployementHistory> workHistory) {
+		this.workHistory = workHistory;
+	}
    
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

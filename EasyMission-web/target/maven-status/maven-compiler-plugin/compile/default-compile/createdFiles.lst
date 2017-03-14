@@ -1,5 +1,11 @@
-tn\easymission\controllers\AddClient.class
-tn\easymission\controllers\AdminIndex.class
+tn\easymission\controllers\HomeLogged.class
+tn\easymission\beans\LogBean.class
+tn\easymission\controllers\ResumeDetails.class
 tn\easymission\controllers\Home.class
 tn\easymission\controllers\Admin_Login.class
+tn\easymission\controllers\AddClient.class
+tn\easymission\controllers\AdminIndex.class
+tn\easymission\beans\UserBean.class
+tn\easymission\beans\NavigationBean.class
 tn\easymission\controllers\Login.class
+tn\easymission\filters\LoginFilter.class
