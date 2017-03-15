@@ -81,4 +81,14 @@
     <servlet-name>gestionService</servlet-name>
     <url-pattern>/gestionService</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>serviceList</display-name>
+    <servlet-name>serviceList</servlet-name>
+    <servlet-class>tn.easymission.controllers.serviceList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serviceList</servlet-name>
+    <url-pattern>/serviceList</url-pattern>
+  </servlet-mapping>
 </web-app>

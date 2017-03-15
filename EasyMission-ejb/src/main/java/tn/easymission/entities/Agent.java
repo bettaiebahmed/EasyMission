@@ -24,13 +24,24 @@ public class Agent extends User implements Serializable {
 	private List<Offre>offres;
 	private List<Candidature> candidatures;
 	private Analyse analyse;
+	private String agentSkills;
+	private String isValid;
 	private List<Notification>notifications;
 	private static final long serialVersionUID = 1L;
 
-	public Agent() {
-		super();
-	}   
 	
+	
+
+	public Agent(String login, String password, String firstName, String lastName, String email, String title,
+			String feedBack, String location, int rating, String agentSkills) {
+		super(login, password, firstName, lastName, email);
+		this.title = title;
+		this.feedBack = feedBack;
+		this.location = location;
+		this.rating = rating;
+		this.agentSkills = agentSkills;
+	}
+
 	public String getLocation() {
 		return location;
 	}
@@ -39,12 +50,28 @@ public class Agent extends User implements Serializable {
 		this.location = location;
 	}
 
+	public String getIsValid() {
+		return isValid;
+	}
+
+	public void setIsValid(String isValid) {
+		this.isValid = isValid;
+	}
+
 	public String getTitle() {
 		return title;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getAgentSkills() {
+		return agentSkills;
+	}
+
+	public void setAgentSkills(String agentSkills) {
+		this.agentSkills = agentSkills;
 	}
 
 	public String getFeedBack() {

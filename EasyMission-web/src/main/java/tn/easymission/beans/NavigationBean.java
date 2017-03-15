@@ -63,5 +63,12 @@ public class NavigationBean implements Serializable {
    public String toWelcome() {
        return "HomePage/secured/welcome.xhtml";
    }
+   /**
+    * Go to welcome page.
+    * @return Welcome page name.
+    */
+   public String toSuspendUser() {
+       return "/EasyMission-web/Admin/Suspenduser";
+   }
     
 }

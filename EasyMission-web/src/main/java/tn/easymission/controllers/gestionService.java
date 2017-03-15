@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class gestionService
  */
-@WebServlet("/admin/gestionService")
+@WebServlet("/Admin/service")
 public class gestionService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,7 +28,7 @@ public class gestionService extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("gestionService.xhtml");
+		RequestDispatcher view = request.getRequestDispatcher("service.xhtml");
 		view.forward(request, response);
 	}
 

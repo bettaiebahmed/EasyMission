@@ -19,9 +19,14 @@ public class UserService implements LocalUser {
 	 
 	 User u =null;
 	@Override
-	public Boolean add(tn.easymission.entities.User u) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean add(User u) {
+		try{
+			em.persist(u);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
 	}
 
 	@Override

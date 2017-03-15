@@ -27,6 +27,7 @@ public class UserBean {
 	private String DateEnd;
 	private String Responsabilities;
 	private String Skills;
+	
 	private ArrayList<EmployementHistory> list;
 	
 	public ArrayList<EmployementHistory> getList() {

@@ -46,7 +46,7 @@ public class LogBean {
 	 
 	 
 	 public String verifier(){
-		 User u = new User();
+		 User u = null;
 		 
 		 u=myService.Login(login, pwd);
 		 if(u!=null)
