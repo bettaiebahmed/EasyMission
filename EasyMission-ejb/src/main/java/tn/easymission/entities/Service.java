@@ -25,7 +25,16 @@ public class Service implements Serializable {
 
 	public Service() {
 		super();
+		
 	}   
+	public Service(int idService, String nameService, String description, String categorie) {
+		super();
+		this.idService = idService;
+		this.nameService = nameService;
+		this.description = description;
+		this.categorie = categorie;
+		
+	}
 	@Id    
 	public int getIdService() {
 		return this.idService;
