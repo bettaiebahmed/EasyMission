@@ -23,8 +23,10 @@ public class Client extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	public Client() {
-		super();
+	
+
+	public Client(String login, String password, String firstName, String lastName, String email) {
+		super(login, password, firstName, lastName, email);
 	}
 
 

@@ -17,9 +17,12 @@ public class Profile extends User implements Serializable {
 	private String privilege;
 	private static final long serialVersionUID = 1L;
 
-	public Profile() {
-		super();
-	}   
+	
+	public Profile(String login, String password, String firstName, String lastName, String email, String privilege) {
+		super(login, password, firstName, lastName, email);
+		this.privilege = privilege;
+	}
+
 	public String getPrivilege() {
 		return this.privilege;
 	}

@@ -21,10 +21,19 @@ public class User implements Serializable {
 	private String email;
 	private static final long serialVersionUID = 1L;
 
-	public User() {
-		super();
-	}   
-	@Id    
+	
+	
+	
+	public User(String login, String password, String firstName, String lastName, String email) {
+		this.login = login;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
+	@Id  
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdUser() {
 		return this.idUser;
 	}

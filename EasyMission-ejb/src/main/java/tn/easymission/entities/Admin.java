@@ -19,9 +19,11 @@ public class Admin extends User implements Serializable {
 	private List<Reward>rewards;
 	private static final long serialVersionUID = 1L;
 
-	public Admin() {
-		super();
+	
+	public Admin(String login, String password, String firstName, String lastName, String email) {
+		super(login, password, firstName, lastName, email);
 	}
+
 	@OneToMany
 	public List<Service> getServices() {
 		return services;
