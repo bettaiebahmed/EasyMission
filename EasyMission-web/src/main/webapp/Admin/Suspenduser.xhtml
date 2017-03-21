@@ -29,68 +29,27 @@
                   <table id="table1" class="table table-striped table-hover table-fw-widget">
                     <thead>
                       <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Login</th>
+                        <th>Account Status</th>
+                        <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
+                    <h:form>
+                    <ui:repeat var="u" value="#{SuspendUserBean.getUsers()}">
                       <tr class="odd gradeX">
-                        <td>Trident</td>
+                        <td>#{u.firstName}</td>
+                        <td>#{u.lastName}</td>
+                        <td>#{u.login}</td>
+                        <td class="center">#{ u.suspended}</td>
                         <td>
-                          Internet
-                          Explorer 4.0
-                        </td>
-                        <td>Win 95+</td>
-                        <td class="center"> 4</td>
-                        <td class="center"></td>
+                        <h:commandButton action="#{SuspendUserBean.doSuspend(u.idUser)}" value="Suspend/Unsuspend" /></td>
                       </tr>
-                      <tr class="even gradeC">
-                        <td>Trident</td>
-                        <td>
-                          Internet
-                          Explorer 5.0
-                        </td>
-                        <td>Win 95+</td>
-                        <td class="center">5</td>
-                        <td class="center">C</td>
-                      </tr>
-                      <tr class="odd gradeA">
-                        <td>Trident</td>
-                        <td>
-                          Internet
-                          Explorer 5.5
-                        </td>
-                        <td>Win 95+</td>
-                        <td class="center">5.5</td>
-                        <td class="center">A</td>
-                      </tr>
-                      <tr class="even gradeA">
-                        <td>Trident</td>
-                        <td>
-                          Internet
-                          Explorer 6
-                        </td>
-                        <td>Win 98+</td>
-                        <td class="center">6</td>
-                        <td class="center">A</td>
-                      </tr>
-                      <tr class="odd gradeA">
-                        <td>Trident</td>
-                        <td>Internet Explorer 7</td>
-                        <td>Win XP SP2+</td>
-                        <td class="center">7</td>
-                        <td class="center">A</td>
-                      </tr>
-                      <tr class="even gradeA">
-                        <td>Trident</td>
-                        <td>AOL browser (AOL desktop)</td>
-                        <td>Win XP</td>
-                        <td class="center">6</td>
-                        <td class="center">A</td>
-                      </tr>
+                     
+                    </ui:repeat>
+                    </h:form>
                     
                     </tbody>
                   </table>

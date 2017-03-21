@@ -210,5 +210,16 @@ public class ManageUserBean {
 	         return null;
 	       
 	 }
+	
+	public int getUserNumber()
+	{ int i = 0;
+	  
+		List<User> users=  myService.findAll();
+		for (User user : users) {
+			i++;
+		}
+		
+		return i;
+	}
 
 }

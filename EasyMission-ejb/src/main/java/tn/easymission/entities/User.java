@@ -19,10 +19,13 @@ public class User implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String suspended;
 	private static final long serialVersionUID = 1L;
 
 	
-	
+	 public User() {
+		super();
+	}
 	
 	public User(String login, String password, String firstName, String lastName, String email) {
 		this.login = login;
@@ -76,5 +79,14 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getSuspended() {
+		return suspended;
+	}
+
+	public void setSuspended(String suspended) {
+		this.suspended = suspended;
+	}
+	
    
 }

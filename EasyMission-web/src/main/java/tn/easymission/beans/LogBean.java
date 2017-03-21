@@ -9,6 +9,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import tn.easymission.controllers.Home;
+import tn.easymission.entities.Admin;
 import tn.easymission.entities.User;
 import tn.easymission.services.LocalUser;
 
@@ -19,6 +20,8 @@ public class LogBean {
 	private String pwd;
 	private User u=null;
 	private boolean loggedIn;
+	private String role;
+	private String suspended;
 	@EJB  
 	LocalUser myService;
 
@@ -28,7 +31,22 @@ public class LogBean {
 	public String getLogin() {
 		return login;
 	}
-	 public void setLogin(String login) {
+	
+	
+	
+	 public String getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
+
+	public void setLogin(String login) {
 		this.login = login;
 	}
 	 public String getPwd() {
@@ -47,10 +65,30 @@ public class LogBean {
 	 
 	 public String verifier(){
 		 User u = null;
-		 
+		 String s=null;
 		 u=myService.Login(login, pwd);
+		 try {
+			s=u.getSuspended();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
 		 if(u!=null)
 		 {
+			 
+			 if (u instanceof Admin)
+			 {
+				 role="Admin";
+			 }
+			 if (s.equals("closed"))
+			 {
+				 suspended="closed";
+				 
+
+			 }
+			
+			 
 			    loggedIn = true;
 			    login=u.getLogin();
                 return navigationBean.redirectToWelcome();
@@ -62,7 +100,22 @@ public class LogBean {
 	        // To to login page
 	        return navigationBean.toLogin();
 	 }
-	 public boolean isLoggedIn() {
+	 
+	 
+	 
+	 public String getSuspended() {
+		return suspended;
+	}
+
+
+
+	public void setSuspended(String suspended) {
+		this.suspended = suspended;
+	}
+
+
+
+	public boolean isLoggedIn() {
 	        return loggedIn;
 	    }
 	 

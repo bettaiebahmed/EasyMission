@@ -3,8 +3,10 @@ C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\co
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\beans\LogBean.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\gestionPromotion.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\beans\ManageUserBean.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\beans\SuspendUserBean.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\gestionRewardsagent.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\beans\NavigationBean.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\beans\feedBackBean.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Admin_Login.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\Home.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\gestionService.java
@@ -14,6 +16,7 @@ C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\be
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\serviceList.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\userSuspend.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\userAdd.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\FeedBackList.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\AddClient.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\AdminIndex.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-web\src\main\java\tn\easymission\controllers\gestionCandidature.java
