@@ -14,7 +14,6 @@ public class EmployementHistory implements Serializable {
 	private EmployementHistoryPk idEmployment;
 	private String title;
 	private String location;
-	private String DateStart;
 	private String DateEnd;
 	private String Responsabilities;
 	private String Skills;
@@ -34,7 +33,6 @@ public class EmployementHistory implements Serializable {
 		this.idEmployment = idEmployment;
 		this.title = title;
 		this.location = location;
-		DateStart = dateStart;
 		DateEnd = dateEnd;
 		Responsabilities = responsabilities;
 		Skills = skills;
@@ -65,13 +63,7 @@ public class EmployementHistory implements Serializable {
 		this.location = location;
 	}
 
-	public String getDateStart() {
-		return DateStart;
-	}
-
-	public void setDateStart(String dateStart) {
-		DateStart = dateStart;
-	}
+	
 
 	public String getDateEnd() {
 		return DateEnd;

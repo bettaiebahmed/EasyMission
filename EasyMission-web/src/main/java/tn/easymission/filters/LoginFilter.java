@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import tn.easymission.beans.LogBean;
+import tn.easymission.beans.UserBean;
+import tn.easymission.entities.Admin;
 
 /**
  * Servlet Filter implementation class LoginFilter
@@ -50,7 +52,15 @@ public class LoginFilter implements Filter {
             String contextPath = ((HttpServletRequest)request).getContextPath();
             ((HttpServletResponse)response).sendRedirect(contextPath + "/login");
         }
-         
+        
+        if (loginBean.getRole()=="Admin") {
+            String contextPath = ((HttpServletRequest)request).getContextPath();
+            ((HttpServletResponse)response).sendRedirect(contextPath + "/Admin/index");
+        }
+        if (loginBean.getSuspended()=="closed") {
+            String contextPath = ((HttpServletRequest)request).getContextPath();
+            ((HttpServletResponse)response).sendRedirect(contextPath + "/ops.xhtml");
+        }
         chain.doFilter(request, response);
 	}
 

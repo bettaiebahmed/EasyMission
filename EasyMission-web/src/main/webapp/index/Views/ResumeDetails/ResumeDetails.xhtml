@@ -151,22 +151,33 @@
                     <div class="img-profile"><img src="./assets/theme/images/people/7.jpg" alt=""/></div>
                     <div class="desc">
                    
-                      <h2>Tibou</h2>
-                      <h4>PHP Developer</h4>
-                      <p>Chicago, IL</p>
+                      <h2>#{SuspendUserBean.getUserbyId(param['id']).firstName}</h2>
+                      <h4>#{SuspendUserBean.getUserbyId(param['id']).lastName}</h4>
+                      <p>#{SuspendUserBean.getUserbyId(param['id']).location}</p>
 
                       <h3 class="resume-sub-title"><span>Work Experience</span></h3>
  <ui:repeat value="#{UserBean.verifier(param['id'])}"
 		var="e">
                       <h4>#{e.title}</h4>
                       <h5>#{e.location} </h5>
-                      <p  class="color-white-mute">#{e.dateStart} to #{e.dateEnd}</p>
+                      <p  class="color-white-mute">#{e.idEmployment.dateStart} to #{e.dateEnd}</p>
                       <h5>Responsibilities :</h5>
                       <p>#{e.responsabilities}</p>
                       <h5>Skills Used :</h5>
                       <p>#{e.skills}</p>
 
-</ui:repeat>                      
+</ui:repeat>             
+                 <h3 class="resume-sub-title"><span>Education</span></h3>
+                      <h4>#{SuspendUserBean.getUserbyId(param['id']).email}</h4>
+                      <h5>Telkom University <span class="color-white-mute">- Bloomington, IN</span></h5>
+
+                      <h3  class="resume-sub-title"><span>Additional Information</span></h3>
+                      <h4>SKILLS:</h4>
+                      <ul>
+                        <li>#{SuspendUserBean.getUserbyId(param['id']).agentSkills} </li>
+                        
+                      </ul>
+                               
                     </div>
                   </div>
                 </div><!-- end box item details -->

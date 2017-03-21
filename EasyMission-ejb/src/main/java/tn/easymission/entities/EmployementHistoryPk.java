@@ -14,6 +14,8 @@ public class EmployementHistoryPk implements Serializable {
      
 	private int idAgent;
 	private int idClient;
+    private String DateStart;
+
 	
 
 	public EmployementHistoryPk() {
@@ -43,10 +45,19 @@ public class EmployementHistoryPk implements Serializable {
 		this.idClient = idClient;
 	}
 
+	public String getDateStart() {
+		return DateStart;
+	}
+
+	public void setDateStart(String dateStart) {
+		DateStart = dateStart;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((DateStart == null) ? 0 : DateStart.hashCode());
 		result = prime * result + idAgent;
 		result = prime * result + idClient;
 		return result;
@@ -61,12 +72,19 @@ public class EmployementHistoryPk implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		EmployementHistoryPk other = (EmployementHistoryPk) obj;
+		if (DateStart == null) {
+			if (other.DateStart != null)
+				return false;
+		} else if (!DateStart.equals(other.DateStart))
+			return false;
 		if (idAgent != other.idAgent)
 			return false;
 		if (idClient != other.idClient)
 			return false;
 		return true;
 	}
+
+	
 	
    
 }
