@@ -1,8 +1,10 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
- <head>
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"> 
+      
+ <h:head>
    
 <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -20,9 +22,9 @@
     <link rel="stylesheet" type="text/css" href="BackendLayout/assets/lib/jqvmap/jqvmap.min.css"/>
     <link rel="stylesheet" type="text/css" href="BackendLayout/assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
     <link rel="stylesheet" href="BackendLayout/assets/css/style.css" type="text/css"/>
-  </head>
+  </h:head>
   <body>
-    <div class="be-wrapper be-fixed-sidebar">
+   <div class="be-wrapper be-fixed-sidebar">
       <nav class="navbar navbar-default navbar-fixed-top be-top-header">
         <div class="container-fluid">
           <div class="navbar-header"><a href="index.html" class="navbar-brand"></a></div>
@@ -42,7 +44,7 @@
                 </ul>
               </li>
             </ul>
-            <div class="page-title"><span>Dashboard</span></div>
+            <div class="page-title"><span>Form Wizard</span></div>
             <ul class="nav navbar-nav navbar-right be-icons-nav">
               <li class="dropdown"><a href="#" role="button" aria-expanded="false" class="be-toggle-right-sidebar"><span class="icon mdi mdi-settings"></span></a></li>
               <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>
@@ -83,18 +85,7 @@
                 <ul class="dropdown-menu be-connections">
                   <li>
                     <div class="list">
-                      <div class="content">
-                        <div class="row">
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/github.png" alt="Github"/><span>GitHub</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/bitbucket.png" alt="Bitbucket"/><span>Bitbucket</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/slack.png" alt="Slack"/><span>Slack</span></a></div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/dribbble.png" alt="Dribbble"/><span>Dribbble</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/mail_chimp.png" alt="Mail Chimp"/><span>Mail Chimp</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="BackendLayout/assets/img/dropbox.png" alt="Dropbox"/><span>Dropbox</span></a></div>
-                        </div>
-                      </div>
+                     
                     </div>
                     <div class="footer"> <a href="#">More</a></div>
                   </li>
@@ -195,8 +186,8 @@
           </div>
         </div>
       </div>
-      </div>
-      
+</div>
+
       </body>
       
   </html>

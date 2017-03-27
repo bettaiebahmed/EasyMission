@@ -68,7 +68,12 @@ public class NavigationBean implements Serializable {
     * @return Welcome page name.
     */
    public String toSuspendUser() {
-       return "/EasyMission-web/Admin/Suspenduser";
+       return "Suspenduser.xhtml?faces-redirect=true";
+   }
+   public String downloadfile(String name)
+   {
+       return "file:///C:/Users/Tibou/Desktop/upload/"+name+"?faces-redirect=true";
+
    }
     
 }

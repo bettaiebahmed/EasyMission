@@ -28,7 +28,10 @@ public class Agent extends User implements Serializable {
 	private String isValid;
 	private List<Notification>notifications;
 	private static final long serialVersionUID = 1L;
-
+public Agent()
+{
+	super();
+}
 	
 	
 

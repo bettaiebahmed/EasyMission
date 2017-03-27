@@ -12,8 +12,8 @@ import javax.persistence.*;
 public class Analyse implements Serializable {
 
 	
-	private int idAnalyse;
-	private int countVisit;
+	private int idAnalyse=1;
+	private int countVisit=0;
 	private Agent agent;
 	private Client client;
 	private static final long serialVersionUID = 1L;

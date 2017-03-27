@@ -14,12 +14,12 @@ public class EmployementHistory implements Serializable {
 	private EmployementHistoryPk idEmployment;
 	private String title;
 	private String location;
-	private String DateStart;
 	private String DateEnd;
 	private String Responsabilities;
 	private String Skills;
 	private Agent agent;
 	private Client client;
+	private Offre offre;
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -34,7 +34,6 @@ public class EmployementHistory implements Serializable {
 		this.idEmployment = idEmployment;
 		this.title = title;
 		this.location = location;
-		DateStart = dateStart;
 		DateEnd = dateEnd;
 		Responsabilities = responsabilities;
 		Skills = skills;
@@ -65,13 +64,7 @@ public class EmployementHistory implements Serializable {
 		this.location = location;
 	}
 
-	public String getDateStart() {
-		return DateStart;
-	}
-
-	public void setDateStart(String dateStart) {
-		DateStart = dateStart;
-	}
+	
 
 	public String getDateEnd() {
 		return DateEnd;
@@ -115,6 +108,16 @@ public class EmployementHistory implements Serializable {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="idOffre",referencedColumnName="idOffre",insertable=false,updatable=false)
+	public Offre getOffre() {
+		return offre;
+	}
+
+	public void setOffre(Offre offre) {
+		this.offre = offre;
 	}
 	
 	

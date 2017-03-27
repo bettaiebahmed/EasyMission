@@ -11,9 +11,9 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import tn.easymission.controllers.Home;
 import tn.easymission.entities.Agent;
 import tn.easymission.entities.EmployementHistory;
+import tn.easymission.entities.Offre;
 import tn.easymission.entities.User;
 import tn.easymission.services.LocalUser;
 
@@ -27,6 +27,7 @@ public class UserBean {
 	private String DateEnd;
 	private String Responsabilities;
 	private String Skills;
+	private String suspended;
 	
 	private ArrayList<EmployementHistory> list;
 	
@@ -124,4 +125,30 @@ public class UserBean {
 		return (ArrayList<EmployementHistory>) this.myService.getResume(id);
 	 }
 
+	public int getEndedContracts()
+	{
+		int i=0;
+		List<EmployementHistory> employments = myService.getEndedContracts();
+		for (EmployementHistory employementHistory : employments) {
+			i++;
+		}
+		return i;
+	}
+	public int getNumberOffer()
+	{
+		int i=0;
+		List<Offre> offres = myService.getNumberOffer();
+		for (Offre offre : offres) {
+			i++;
+		}
+		return i;
+	}
+	public void IncrementImpression()
+	{
+		myService.IncrementImpression();
+	}
+	public int getImpression()
+	{
+		return myService.getImpression().getCountVisit();
+	}
 }
