@@ -1,14 +1,23 @@
 package tn.easymission.beans;
 
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
-import tn.easymission.controllers.Home;
+import org.brickred.socialauth.AuthProvider;
+import org.brickred.socialauth.Profile;
+import org.brickred.socialauth.SocialAuthManager;
+import org.brickred.socialauth.util.SocialAuthUtil;
+
 import tn.easymission.entities.Admin;
 import tn.easymission.entities.User;
 import tn.easymission.services.LocalUser;
@@ -22,6 +31,72 @@ public class LogBean {
 	private boolean loggedIn;
 	private String role;
 	private String suspended;
+	 private SocialAuthManager manager;
+	    private String            originalURL;
+	    private String            providerID;
+	    private Profile           profile;
+	    
+	    
+	    private String fromWhere;
+	    
+	    
+	    
+	    
+	    
+	public String getFromWhere() {
+			return fromWhere;
+		}
+
+
+		public void setFromWhere(String fromWhere) {
+			this.fromWhere = fromWhere;
+		}
+
+
+	public SocialAuthManager getManager() {
+			return manager;
+		}
+
+
+		public void setManager(SocialAuthManager manager) {
+			this.manager = manager;
+		}
+
+
+		public String getOriginalURL() {
+			return originalURL;
+		}
+
+
+		public void setOriginalURL(String originalURL) {
+			this.originalURL = originalURL;
+		}
+
+
+		public String getProviderID() {
+			return providerID;
+		}
+
+
+		public void setProviderID(String providerID) {
+			this.providerID = providerID;
+		}
+
+
+		public Profile getProfile() {
+			return profile;
+		}
+
+
+		public void setProfile(Profile profile) {
+			this.profile = profile;
+		}
+
+
+		public NavigationBean getNavigationBean() {
+			return navigationBean;
+		}
+
 	@EJB  
 	LocalUser myService;
 
@@ -31,7 +106,6 @@ public class LogBean {
 	public String getLogin() {
 		return login;
 	}
-	
 	
 	
 	 public String getRole() {

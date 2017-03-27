@@ -22,8 +22,14 @@
                 <div class="row">
                   <div class="col-md-12">
                     <!-- buttons top -->
-                    <p><a href="#" class="btn btn-primary btn-theme btn-block"><i class="fa fa-facebook pull-left bordered-right"></i> Login with Facebook</a></p>
+                    <h:form>
+                    <p><h:commandLink class="btn btn-primary btn-theme btn-block" id="facebook" action="#{socialMediaBean.socialConnect()}" >
+                               <f:setPropertyActionListener target="#{socialMediaBean.providerID}" value="facebook" />
+                   
+                    </h:commandLink>
+                    </p>
                     <p><a href="#" class="btn btn-danger btn-theme btn-block"><i class="fa fa-google-plus pull-left bordered-right"></i> Login with Google</a></p>
+                   </h:form>
                     <!-- end buttons top -->
 
                     <div class="white-space-10"></div>

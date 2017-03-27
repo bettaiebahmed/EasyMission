@@ -8,8 +8,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import tn.easymission.entities.Admin;
 import tn.easymission.entities.Agent;
 import tn.easymission.entities.Analyse;
+import tn.easymission.entities.Client;
 import tn.easymission.entities.EmployementHistory;
 import tn.easymission.entities.Feedback;
 import tn.easymission.entities.Offre;
@@ -75,7 +77,8 @@ public class UserService implements LocalUser {
 
 	@Override
 	public List<EmployementHistory> getResume(int id) {
-		Query  query = em.createQuery("Select e from EmployementHistory e", EmployementHistory.class);
+		Query  query = em.createQuery("Select e from EmployementHistory e where e.idEmployment.idAgent=:idAgent", EmployementHistory.class);
+		query.setParameter("idAgent", id);
 		List<EmployementHistory> list=query.getResultList();
 		
 		return  list;
@@ -146,6 +149,87 @@ public class UserService implements LocalUser {
 	public List<Feedback> getFeedBacks() {
 		Query  query = em.createQuery("Select f from Feedback f ", Feedback.class);
 		List<Feedback> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public Boolean addAgent(Agent a) {
+		try{
+			em.persist(a);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Boolean addClient(Client c) {
+		try{
+			em.persist(c);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Boolean addAdmin(Admin admin) {
+		try{
+			em.persist(admin);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Client findClientById(int id) {
+		return em.find(Client.class, id);
+
+	}
+
+	@Override
+	public Boolean updateAgent(Agent agent) {
+		try
+		{
+			em.merge(agent);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
+
+	@Override
+	public Boolean updateClient(Client client) {
+		try
+		{
+			em.merge(client);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
+
+	@Override
+	public List<Agent> getAgents() {
+		Query  query = em.createQuery("Select a from Agent a ", Agent.class);
+		List<Agent> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public List<Client> getClients() {
+		Query  query = em.createQuery("Select c from Client c ", Client.class);
+		List<Client> list=query.getResultList();
 		return list;
 	}
 

@@ -19,6 +19,7 @@ public class EmployementHistory implements Serializable {
 	private String Skills;
 	private Agent agent;
 	private Client client;
+	private Offre offre;
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -107,6 +108,16 @@ public class EmployementHistory implements Serializable {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="idOffre",referencedColumnName="idOffre",insertable=false,updatable=false)
+	public Offre getOffre() {
+		return offre;
+	}
+
+	public void setOffre(Offre offre) {
+		this.offre = offre;
 	}
 	
 	
