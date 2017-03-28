@@ -11,7 +11,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import tn.easymission.controllers.Home;
 import tn.easymission.entities.Agent;
 import tn.easymission.entities.Analyse;
 import tn.easymission.entities.Candidature;

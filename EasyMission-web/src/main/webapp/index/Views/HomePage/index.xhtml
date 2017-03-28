@@ -50,7 +50,7 @@
  <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a href="#" class="link-profile dropdown-toggle"  data-toggle="dropdown" >
-                    <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"/> #{myLogBean.login} #{myLogBean.suspended}  <b class="caret"></b>
+                    <img src="assets/theme/images/people/4.jpg" alt="" class="img-profile"/><h:outputText value="#{socialMediaBean.pullUserInfo()}" rendered="#{not empty socialMediaBean.pullUserInfo()}"/> #{myLogBean.login} #{myLogBean.suspended}  <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="my_alerts.html"> My Alerts </a></li>

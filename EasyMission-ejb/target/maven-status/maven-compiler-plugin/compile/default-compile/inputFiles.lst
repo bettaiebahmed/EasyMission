@@ -6,8 +6,11 @@ C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\en
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Analyse.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Forum.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Service.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\services\GestionRewardsLocal.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Offre.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Promotion.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\FeedBackPk.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Feedback.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Candidature.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\EmployementHistory.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Reward.java
@@ -16,5 +19,6 @@ C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\se
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Notification.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Profile.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Admin.java
-C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\Commentaire.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\FeedBackListing.java
+C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\services\GestionRewards.java
 C:\Users\Tibou\Pidev\EasyMission\EasyMission-ejb\src\main\java\tn\easymission\entities\User.java
