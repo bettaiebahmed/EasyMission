@@ -8,8 +8,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import tn.easymission.entities.Admin;
 import tn.easymission.entities.Agent;
+import tn.easymission.entities.Analyse;
+import tn.easymission.entities.Client;
 import tn.easymission.entities.EmployementHistory;
+import tn.easymission.entities.Feedback;
+import tn.easymission.entities.Offre;
 import tn.easymission.entities.User;
 
 @Stateless
@@ -42,15 +47,16 @@ public class UserService implements LocalUser {
 	}
 
 	@Override
-	public Boolean delete(tn.easymission.entities.User u) {
+	public Boolean delete(User u) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<tn.easymission.entities.User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> findAll() {
+		Query  query = em.createQuery("Select u from User u", User.class);
+		List<User> list=query.getResultList();
+		return list;
 	}
 
 	@Override
@@ -71,10 +77,160 @@ public class UserService implements LocalUser {
 
 	@Override
 	public List<EmployementHistory> getResume(int id) {
-		Query  query = em.createQuery("Select e from EmployementHistory e", EmployementHistory.class);
+		Query  query = em.createQuery("Select e from EmployementHistory e where e.idEmployment.idAgent=:idAgent", EmployementHistory.class);
+		query.setParameter("idAgent", id);
 		List<EmployementHistory> list=query.getResultList();
 		
 		return  list;
+	}
+  
+	
+	@Override
+	public void doSuspend(int id)
+	{
+		Query  query = em.createQuery("Update User u set u.suspended=:status where u.idUser=:id");
+         query.setParameter("status", "closed");
+         query.setParameter("id", id);
+         query.executeUpdate();
+
+		
+	}
+
+	@Override
+	public void Update(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void UnSuspend(int id) {
+		Query  query = em.createQuery("Update User u set u.suspended=:status where u.idUser=:id");
+        query.setParameter("status", "opened");
+        query.setParameter("id", id);
+        query.executeUpdate();
+		
+	}
+
+	@Override
+	public Agent findAgentById(int id) {
+		
+		return em.find(Agent.class, id);
+	}
+
+	@Override
+	public List<EmployementHistory> getEndedContracts() {
+		Query  query = em.createQuery("Select e from EmployementHistory e where e.dateEnd<>'Present' ", EmployementHistory.class);
+		List<EmployementHistory> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public List<Offre> getNumberOffer() {
+		
+		Query  query = em.createQuery("Select o from Offre o ", Offre.class);
+		List<Offre> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public void IncrementImpression() {
+		Query  query = em.createQuery("Update Analyse o set o.countVisit=o.countVisit+1 where idAnalyse=1");
+     
+        query.executeUpdate();		
+	}
+
+	@Override
+	public Analyse getImpression() {
+		return em.find(Analyse.class, 1);
+
+	}
+
+	@Override
+	public List<Feedback> getFeedBacks() {
+		Query  query = em.createQuery("Select f from Feedback f ", Feedback.class);
+		List<Feedback> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public Boolean addAgent(Agent a) {
+		try{
+			em.persist(a);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Boolean addClient(Client c) {
+		try{
+			em.persist(c);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Boolean addAdmin(Admin admin) {
+		try{
+			em.persist(admin);
+			return true;
+		}catch(Exception e){
+			
+		}
+		return false;
+	}
+
+	@Override
+	public Client findClientById(int id) {
+		return em.find(Client.class, id);
+
+	}
+
+	@Override
+	public Boolean updateAgent(Agent agent) {
+		try
+		{
+			em.merge(agent);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
+
+	@Override
+	public Boolean updateClient(Client client) {
+		try
+		{
+			em.merge(client);
+			return true;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+		
+	}
+
+	@Override
+	public List<Agent> getAgents() {
+		Query  query = em.createQuery("Select a from Agent a ", Agent.class);
+		List<Agent> list=query.getResultList();
+		return list;
+	}
+
+	@Override
+	public List<Client> getClients() {
+		Query  query = em.createQuery("Select c from Client c ", Client.class);
+		List<Client> list=query.getResultList();
+		return list;
 	}
 
 }

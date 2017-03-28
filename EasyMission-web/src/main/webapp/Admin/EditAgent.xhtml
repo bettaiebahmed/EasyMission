@@ -1,0 +1,108 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">  
+
+    	<ui:composition template="BackendLayout/BackendLayout.xhtml">
+    	<ui:define name="content">
+    	<body>
+    	          <div class="be-content">
+    	    
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default panel-border-color panel-border-color-primary">
+                <div class="panel-heading panel-heading-divider">Update <span class="panel-subtitle">Parsley different validation types</span></div>
+                <div class="panel-body">
+                  <h:form  class="form-horizontal group-border-dashed">
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">First Name</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.firstName}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Last Name</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.lastName}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Email</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.email}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Password</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.password}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Agent Skills</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.agentSkills}"/>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-sm-3 control-label">Login</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.login}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Location</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.location}"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-3 control-label">Title</label>
+                      <div class="col-sm-6">
+               <h:inputText  placeholder="User name" class="form-control" value="#{UpdateUserBean.agent.title}"/>
+                      </div>
+                    </div>
+                   
+                    
+                    <div class="form-group">
+                      <div class="col-sm-2 col-sm-10">
+                        <h:commandButton action="#{UpdateUserBean.updateAgent()}" value="Update" class="btn btn-space btn-primary" >
+
+                        
+                        </h:commandButton>
+                        
+                        <button class="btn btn-space btn-default">Cancel</button>
+                      </div>
+                    </div>
+                  </h:form>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  
+    	</body>
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	</ui:define>
+    	
+    	
+    	
+    	
+    	
+    	
+    	</ui:composition>
+    	
+
+
+</html>
