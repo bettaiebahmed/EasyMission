@@ -27,15 +27,16 @@ public class Service implements Serializable {
 		super();
 		
 	}   
-	public Service(int idService, String nameService, String description, String categorie) {
+	public Service(String nameService, String description, String categorie) {
 		super();
-		this.idService = idService;
+		
 		this.nameService = nameService;
 		this.description = description;
 		this.categorie = categorie;
 		
 	}
 	@Id    
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdService() {
 		return this.idService;
 	}
