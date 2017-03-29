@@ -20,17 +20,19 @@ public class Candidature implements Serializable {
 	private String status;
 	private Client client;
 	private Agent agent;
+	private String pathCV;
 	private static final long serialVersionUID = 1L;
 
 	public Candidature() {
 		super();
 	}   
-	public Candidature(Date dateSubmit, String status, Client client, Agent agent) {
+	public Candidature(Date dateSubmit, String status, Client client, Agent agent, String pathCV) {
 		super();
 		this.dateSubmit=dateSubmit;
 		this.status=status;
 		this.client=client;
 		this.agent=agent;
+		this.pathCV=pathCV;
 		this.idCandidature=new CandidaturePk(client.getIdUser(),agent.getIdUser());	
 	}   
 	@EmbeddedId
@@ -70,6 +72,12 @@ public class Candidature implements Serializable {
 	}
 	public void setAgent(Agent agent) {
 		this.agent = agent;
+	}
+	public String getPathCV() {
+		return pathCV;
+	}
+	public void setPathCV(String pathCV) {
+		this.pathCV = pathCV;
 	}
    
 }
