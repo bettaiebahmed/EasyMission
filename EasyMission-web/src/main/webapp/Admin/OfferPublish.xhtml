@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">  
+
+<ui:composition template="BackendLayout/BackendLayout.xhtml">
+    <ui:define name="content">
+    	<body>
+<ui:repeat value="#{offreBean.offres}" var="offer">
+		<div class="panel panel-default"  >
+            <div class="panel-heading panel-heading-divider">Work Offers</div>
+                <div class="panel-body">
+    	            
+    					
+    					<p class="xs-mb-30">Date Offre : #{offer.dateOffre}</p>
+                  		<br/>
+                  		<p class="xs-mb-30">Nom du societe : #{offer.nomSociete}</p>
+                  		<br/>
+                  		<p class="xs-mb-30">Salaire : #{offer.salaire}</p>
+                  		<br/>
+                  		
+                  		
+					
+                  	<p class="xs-mb-10 text-center">
+                    <h:commandButton  class="btn btn-default btn-space" value="Consulter"/>
+                  </p>
+                </div>
+             </div>
+		
+		</ui:repeat>
+		</body>
+	</ui:define>
+</ui:composition> 
+</html>

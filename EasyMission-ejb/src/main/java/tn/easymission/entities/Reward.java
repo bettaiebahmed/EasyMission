@@ -52,12 +52,6 @@ public class Reward implements Serializable {
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
-	@OneToOne(mappedBy="reward",fetch=FetchType.EAGER)	
-	public Offre getOffre() {
-		return offre;
-	}
-	public void setOffre(Offre offre) {
-		this.offre = offre;
-	}
+	
    
 }

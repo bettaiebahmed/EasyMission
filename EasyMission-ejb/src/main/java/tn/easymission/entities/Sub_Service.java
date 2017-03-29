@@ -20,6 +20,7 @@ public class Sub_Service implements Serializable {
 	private String description;
 	private Service service;
 	private List<Promotion>promotions;
+	private Offre offre;
 	private static final long serialVersionUID = 1L;
 
 	public Sub_Service() {
@@ -60,6 +61,13 @@ public class Sub_Service implements Serializable {
 	}
 	public void setPromotions(List<Promotion> promotions) {
 		this.promotions = promotions;
+	}
+	@ManyToOne
+	public Offre getOffre() {
+		return offre;
+	}
+	public void setOffre(Offre offre) {
+		this.offre = offre;
 	}
    
 }

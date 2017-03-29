@@ -21,6 +21,7 @@ public class Service implements Serializable {
 	private String categorie;
 	private Admin admin;
 	private List<Sub_Service>sub_Services;
+	private Offre offre;
 	private static final long serialVersionUID = 1L;
 
 	public Service() {
@@ -68,6 +69,14 @@ public class Service implements Serializable {
 	}
 	public void setSub_Services(List<Sub_Service> sub_Services) {
 		this.sub_Services = sub_Services;
+	}
+	
+	@OneToOne(mappedBy="service",fetch=FetchType.EAGER)
+	public Offre getOffre() {
+		return offre;
+	}
+	public void setOffre(Offre offre) {
+		this.offre = offre;
 	}
    
 }

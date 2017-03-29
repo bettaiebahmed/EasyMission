@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
 /**
  * Entity implementation class for Entity: Offre
  *
@@ -18,16 +19,23 @@ public class Offre implements Serializable {
 	
 	private int idOffre;
 	private Date dateOffre;
-	private String description;
-	private Client client;
-	private List<Agent>agents;
-	private Reward reward;
+	private String descriptionJob;
+	private String nomSociete;
+	private String nomTravail;
+	private String lieuTravail;
+	private float salaire;
+	private String typeSalaire;
+	private String experience;
+	private String anneeExperience;
+	private Service service;
+	//private List<Sub_Service>sub_Services;
 	private static final long serialVersionUID = 1L;
-
+	
 	public Offre() {
 		super();
 	}   
-	@Id    
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdOffre() {
 		return this.idOffre;
 	}
@@ -41,33 +49,101 @@ public class Offre implements Serializable {
 
 	public void setDateOffre(Date dateOffre) {
 		this.dateOffre = dateOffre;
-	}   
-	public String getDescription() {
-		return this.description;
 	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	
+	public String getDescriptionJob() {
+		return descriptionJob;
 	}
-	public Client getClient() {
-		return client;
+	public void setDescriptionJob(String descriptionJob) {
+		this.descriptionJob = descriptionJob;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+	public String getNomSociete() {
+		return nomSociete;
 	}
-	@ManyToMany(mappedBy="offres",fetch=FetchType.EAGER)
-	public List<Agent> getAgents() {
-		return agents;
+	public void setNomSociete(String nomSociete) {
+		this.nomSociete = nomSociete;
 	}
-	public void setAgents(List<Agent> agents) {
-		this.agents = agents;
+	public String getNomTravail() {
+		return nomTravail;
+	}
+	public void setNomTravail(String nomTravail) {
+		this.nomTravail = nomTravail;
+	}
+	public String getLieuTravail() {
+		return lieuTravail;
+	}
+	public void setLieuTravail(String lieuTravail) {
+		this.lieuTravail = lieuTravail;
+	}
+	public float getSalaire() {
+		return salaire;
+	}
+	public void setSalaire(float salaire) {
+		this.salaire = salaire;
+	}
+	public String getTypeSalaire() {
+		return typeSalaire;
+	}
+	public void setTypeSalaire(String typeSalaire) {
+		this.typeSalaire = typeSalaire;
+	}
+	public String getExperience() {
+		return experience;
+	}
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+	public String getAnneeExperience() {
+		return anneeExperience;
+	}
+	public void setAnneeExperience(String anneeExperience) {
+		this.anneeExperience = anneeExperience;
+	}
+	
+	
+	
+	
+	//@OneToMany
+	//public List<Sub_Service> getSub_Services() {
+	//	return sub_Services;
+	//}
+//	public void setSub_Services(List<Sub_Service> sub_Services) {
+//		this.sub_Services = sub_Services;
+//	}
+	
+//	public void assignService(Service service)
+//	{
+//		this.setServices(services);
+//		service.setOffre(this);
+//	}
+//	
+//	public void assignSub_Service(Sub_Service sub_service)
+//	{
+//		this.setSub_Services(sub_Services);
+//		sub_service.setOffre(this);
+//	}
+	public Offre(Date dateOffre, String descriptionJob, String nomSociete, String nomTravail, String lieuTravail,
+			float salaire, String typeSalaire, String experience, String anneeExperience) {
+		super();
+		this.dateOffre = dateOffre;
+		this.descriptionJob = descriptionJob;
+		this.nomSociete = nomSociete;
+		this.nomTravail = nomTravail;
+		this.lieuTravail = lieuTravail;
+		this.salaire = salaire;
+		this.typeSalaire = typeSalaire;
+		this.experience = experience;
+		this.anneeExperience = anneeExperience;
 	}
 	@OneToOne
-	public Reward getReward() {
-		return reward;
+	public Service getService() {
+		return service;
 	}
-	public void setReward(Reward reward) {
-		this.reward = reward;
+	public void setService(Service service) {
+		this.service = service;
 	}
+	
+	
+	   
    
 }

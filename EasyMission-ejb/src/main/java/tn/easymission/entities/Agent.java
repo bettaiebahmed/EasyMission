@@ -32,6 +32,10 @@ public class Agent extends User implements Serializable {
 	
 	
 
+	public Agent() {
+		super();
+	}
+
 	public Agent(String login, String password, String firstName, String lastName, String email, String title,
 			String feedBack, String location, int rating, String agentSkills) {
 		super(login, password, firstName, lastName, email);

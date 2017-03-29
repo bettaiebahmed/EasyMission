@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">  
+
+<ui:composition template="BackendLayout/BackendLayout.xhtml">
+    	<ui:define name="content">
+    	<body>
+    	<center>
+<div class="gradient">
+<h1>Liste des Offres</h1>
+	<h:form id="offres">
+		<p:dataTable 	emptyMessage="pas d'offres!!!"
+						var="offer" 
+						value="#{offreBean.offres}"  
+						paginator="true"
+						rows="6" 
+						paginatorPosition="bottom">
+		<f:facet name="header">
+		<h:outputText value="Liste des offres" />
+		</f:facet>
+    <p:column headerText="Id">
+        <h:outputText value="#{offer.idOffre}" />
+    </p:column>
+ 
+    <p:column headerText="Date">
+        <h:outputText value="#{offer.dateOffre}" />
+    </p:column>
+    
+    <p:column headerText="Description">
+        <h:outputText value="#{offer.descriptionJob}" />
+    </p:column>
+    
+    <p:column headerText="nomSociete">
+        <h:outputText value="#{offer.nomSociete}" />
+    </p:column>
+    
+    <p:column headerText="nomTravail">
+        <h:outputText value="#{offer.nomTravail}" />
+    </p:column>
+    
+    <p:column headerText="lieuTravail">
+        <h:outputText value="#{offer.lieuTravail}" />
+    </p:column>
+    
+    <p:column headerText="salaire">
+        <h:outputText value="#{offer.salaire}" />
+    </p:column>
+    
+    <p:column headerText="typeSalaire">
+        <h:outputText value="#{offer.typeSalaire}" />
+    </p:column>
+    
+    <p:column headerText="experience">
+        <h:outputText value="#{offer.experience}" />
+    </p:column>
+    
+    <p:column headerText="anneeExperience">
+        <h:outputText value="#{offer.anneeExperience}" />
+    </p:column>
+    
+    <p:column headerText="Id">
+        <h:outputText value="#{offer.idOffre}" />
+    </p:column>
+    <p:column headerText="Id">
+        <h:outputText value="#{offer.service.nameService}" />
+    </p:column>
+    
+    <p:column>
+        <h:commandButton action="#{offreBean.doDelete(offer)}" value="delete" />
+    </p:column>
+    
+    <p:column>
+        <h:commandButton  value="update">
+        
+        	<f:setPropertyActionListener value="#{true}" target="#{offreBean.visible}"></f:setPropertyActionListener>
+        	<f:setPropertyActionListener value="#{offer}" target="#{offreBean.offre}"></f:setPropertyActionListener>
+       
+        </h:commandButton>
+    </p:column>
+	</p:dataTable>
+
+	</h:form>
+	
+	
+	<!--update-->
+	<br/>
+		<h:form rendered="#{offreBean.visible}">
+		
+		<br/><br/>
+		
+		<h:outputText class="col-sm-3 control-label" value="experience:" />
+		<h:inputText class="form-control"  value="#{offreBean.offre.experience}"/>
+		<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="Date:" />
+		<p:calendar  class="form-control" value="#{offreBean.offre.dateOffre}"  pattern="yyyy-MM-dd" />
+		<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="descriptionjob:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.descriptionJob}"/>
+		<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="lieutravail:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.lieuTravail}" /> 
+		<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="Année Experience:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.anneeExperience}" />
+<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="salaire" />
+		<h:inputText class="form-control" value="#{offreBean.offre.salaire}" />
+		<br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="nomSociete:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.nomSociete}" />
+		
+        <br/><br/>
+		<h:outputText class="col-sm-3 control-label" value="nomTravail:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.nomTravail}" />
+		<br/><br/>
+		<h:outputText value="typeSalaire:" />
+		<h:inputText class="form-control" value="#{offreBean.offre.typeSalaire}" />
+		<br/><br/>
+        <p:selectOneMenu value="#{offreBean.offre.service}" converter="javax.faces.Character">
+						<f:selectItem itemLabel="choisir..." itemValue=""/>
+						<f:selectItems value="#{offreBean.services}" var="tr" itemLabel="#{tr.nameService}" itemValue="#{tr}"/>
+		</p:selectOneMenu>
+		<br/><br/>
+<h:commandButton  action="#{offreBean.doUpdate()}" value="Valider" />
+<br/><br/>
+
+	</h:form>
+	
+</div>
+</center>
+</body>
+</ui:define>
+</ui:composition> 
+</html>

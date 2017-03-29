@@ -18,6 +18,11 @@ public class Profile extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
+	
+	public Profile() {
+		super();
+	}
+
 	public Profile(String login, String password, String firstName, String lastName, String email, String privilege) {
 		super(login, password, firstName, lastName, email);
 		this.privilege = privilege;
