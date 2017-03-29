@@ -39,4 +39,5 @@ public interface LocalUser {
 	public List<Feedback> getFeedBacks();
 	public List<Agent> getAgents();
 	public List<Client> getClients();
+	public List<Agent> getAgentsbyName(String name);
 }

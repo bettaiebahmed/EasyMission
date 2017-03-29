@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <ui:composition template="BackendLayout/BackendLayout.xhtml">
@@ -23,13 +25,13 @@
 						<div class="col-sm-12">
 							<div class="panel panel-default panel-table">
 								<h:form>
-								<div class="panel-heading">
-									Default
-									<div class="form-group">
-										<label class="col-sm-3 control-label">Users Type</label>
-										<div class="col-sm-6">
-										
-										
+									<div class="panel-heading">
+										Default
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Users Type</label>
+											<div class="col-sm-6">
+
+
 												<h:selectOneMenu value="#{ManageUserBean.role}">
 													<f:selectItem itemValue="" itemLabel="Select a role" />
 
@@ -38,117 +40,190 @@
 													<f:ajax render="@form" />
 
 												</h:selectOneMenu>
-											
 
 
 
 
+
+											</div>
+										</div>
+										<div class="tools">
+											<span class="icon mdi mdi-download"></span><span
+												class="icon mdi mdi-more-vert"></span>
 										</div>
 									</div>
-									<div class="tools">
-										<span class="icon mdi mdi-download"></span><span
-											class="icon mdi mdi-more-vert"></span>
-									</div>
-								</div>
-								
-
-                                                  <h:panelGrid  rendered="#{ManageUserBean.role == 'Agent'}">
-                                      <div class="panel-body">
-
-									<table id="table1"
-										class="table table-striped table-hover table-fw-widget">
-										<thead>
-											<tr>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Login</th>
-												<th>Email</th>
-												<th>Agent Skills</th>
-												<th>Location</th>
-												<th>Title</th>
-												<th>Account Status</th>
-												<th>Actions</th>
-											</tr>
-										</thead>
-
-										<tbody>
-												<ui:repeat var="u" value="#{ManageUserBean.getAgents()}">
-
-													<tr class="odd gradeX">
-														<td>#{u.firstName}</td>
-														<td>#{u.lastName}</td>
-														<td>#{u.login}</td>
-														<td>#{u.email}</td>
-														<td>#{u.agentSkills}</td>
-														<td>#{u.location}</td>
-														<td>#{u.title}</td>
-														<td class="center">#{ u.suspended}</td>
-														<td><h:commandButton
-																action="#{SuspendUserBean.doSuspend(u.idUser)}"
-																value="Suspend/Unsuspend" /> <h:commandButton
-																action="#{ManageUserBean.downloadFileAgent(u.idUser,u.firstName)}"
-																value="Download" /> <h:link value="Update"
-																outcome="EditAgent.xhtml">
-																<f:param name="idAgent" value="#{u.idUser}" />
-															</h:link></td>
-													</tr>
 
 
-
-												</ui:repeat>
-												</tbody>
-												</table>
-												</div>
-												
-                                          </h:panelGrid>
-                                                  <h:panelGrid  rendered="#{ManageUserBean.role == 'Client'}">
-                                                   <div class="panel-body">
-
-									<table id="table1"
-										class="table table-striped table-hover table-fw-widget">
-										<thead>
-											<tr>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Login</th>
-												<th>Email</th>
+									<h:panelGrid rendered="#{ManageUserBean.role == 'Agent'}">
+										<div class="panel-body">
+											<h:outputText value="Search for agent location: " />
+											<p:inputText id="counter"
+												value="#{ManageUserBean.searchAjaxInput}">
+												<p:ajax event="keyup" update="out" />
+											</p:inputText>
 											
-												<th>Account Status</th>
-												<th>Actions</th>
-											</tr>
-										</thead>
+											<h:outputText value="#{ManageUserBean.searchAjaxInput}" />
+											<h:panelGrid id="out">
+											<table id="table1"
+												class="table table-striped table-hover table-fw-widget">
 
-										<tbody>
-
-												<ui:repeat var="u" value="#{ManageUserBean.getClients()}">
-													<tr class="odd gradeX">
-
-														<td>#{u.firstName}</td>
-														<td>#{u.lastName}</td>
-														<td>#{u.login}</td>
-														<td>#{u.email}</td>
-														<td class="center">#{ u.suspended}</td>
-														<td><h:commandButton
-																action="#{SuspendUserBean.doSuspend(u.idUser)}"
-																value="Suspend/Unsuspend" /> <h:link value="Update"
-																outcome="EditClient.xhtm">
-																<f:param name="idClient" value="#{u.idUser}" />
-															</h:link></td>
-
+												<thead>
+													<tr>
+														<th>First Name</th>
+														<th>Last Name</th>
+														<th>Login</th>
+														<th>Email</th>
+														<th>Agent Skills</th>
+														<th>Location</th>
+														<th>Title</th>
+														<th>Account Status</th>
+																	<th>Offre</th>
+														
+														<th>Actions</th>
 													</tr>
-
-
-												</ui:repeat>
-												</tbody>
-												</table>
-												</div>
+												</thead>
 												
-												</h:panelGrid>
 
-										
-							</h:form>
+													<c:if test="#{ManageUserBean.searchAjaxInput != '' }">
+														<ui:repeat var="u"
+															value="#{ManageUserBean.getListAgentByName(ManageUserBean.searchAjaxInput)}">
+
+															<tbody>
+
+
+																<tr class="odd gradeX">
+																	<td>#{u.firstName}</td>
+																	<td>#{u.lastName}</td>
+																	<td>#{u.login}</td>
+																	<td>#{u.email}</td>
+																	<td>#{u.agentSkills}</td>
+																	<td>#{u.location}</td>
+																	<td>#{u.title}</td>
+																	<td class="center">#{ u.suspended}</td>
+                                                                     <td><ui:repeat var="o" value="#{ u.offres}">#{o.description}<br></br></ui:repeat></td>
+																	<td><h:commandButton
+																			action="#{SuspendUserBean.doSuspend(u.idUser)}"
+																			value="Suspend/Unsuspend" /> <h:commandButton
+																			action="#{ManageUserBean.downloadFileAgent(u.idUser,u.firstName)}"
+																			value="Download" /> <h:link value="Update"
+																			outcome="EditAgent.xhtml">
+																			<f:param name="idAgent" value="#{u.idUser}" />
+																		</h:link></td>
+																</tr>
+															</tbody>
+
+
+														</ui:repeat>
+
+													</c:if>
+													
+
+												
+											</table>
+											<c:if
+														test="#{ManageUserBean.searchAjaxInput=='' or ManageUserBean.searchAjaxInput==null}">
+														<p:dataTable var="u" value="#{ManageUserBean.getAgents()}" widgetVar="agentTable"
+                 emptyMessage="No skills found" filteredValue="#{ManageUserBean.aG}">
+                  <f:facet name="header">
+            <p:outputPanel>
+                <h:outputText value="Search all fields:" />
+                <p:inputText id="globalFilter" onkeyup="PF('agentTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+            </p:outputPanel>
+        </f:facet>
+         <p:column filterBy="#{u.firstName}" headerText="First Name" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.firstName}" />
+        </p:column>
+  <p:column filterBy="#{u.lastName}" headerText="LastName Name" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.lastName}" />
+        </p:column>
+         <p:column filterBy="#{u.login}" headerText="Login" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.login}" />
+        </p:column>
+         <p:column filterBy="#{u.email}" headerText="Email " footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.email}" />
+        </p:column>
+         <p:column filterBy="#{u.agentSkills}" headerText="Agent Skills" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.agentSkills}" />
+        </p:column>
+         <p:column filterBy="#{u.location}" headerText="Location" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.location}" />
+        </p:column>
+         <p:column filterBy="#{u.title}" headerText="Title" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{u.title}" />
+        </p:column>
+        <p:column filterBy="#{ u.suspended}" headerText="Suspend" footerText="contains" filterMatchMode="contains">
+            <h:outputText value="#{ u.suspended}" />
+        </p:column>
+        <p:column>
+<ui:repeat var="o" value="#{ u.offres}">#{o.description}<br></br></ui:repeat>
+        </p:column>
+        <p:column>
+        <h:commandButton
+																			action="#{SuspendUserBean.doSuspend(u.idUser)}"
+																			value="Suspend/Unsuspend" /> <h:commandButton
+																			action="#{ManageUserBean.downloadFileAgent(u.idUser,u.firstName)}"
+																			value="Download" /> <h:link value="Update"
+																			outcome="EditAgent.xhtml">
+																			<f:param name="idAgent" value="#{u.idUser}" />
+																		</h:link>
+        </p:column>
+        </p:dataTable>
+														
+													
+													</c:if>
+											</h:panelGrid>
+										</div>
+
+									</h:panelGrid>
+
+									<h:panelGrid rendered="#{ManageUserBean.role == 'Client'}">
+										<div class="panel-body">
+
+											<table id="table1"
+												class="table table-striped table-hover table-fw-widget">
+												<thead>
+													<tr>
+														<th>First Name</th>
+														<th>Last Name</th>
+														<th>Login</th>
+														<th>Email</th>
+
+														<th>Account Status</th>
+														<th>Actions</th>
+													</tr>
+												</thead>
+
+												<tbody>
+
+													<ui:repeat var="u" value="#{ManageUserBean.getClients()}">
+														<tr class="odd gradeX">
+
+															<td>#{u.firstName}</td>
+															<td>#{u.lastName}</td>
+															<td>#{u.login}</td>
+															<td>#{u.email}</td>
+															<td class="center">#{ u.suspended}</td>
+															<td><h:commandButton
+																	action="#{SuspendUserBean.doSuspend(u.idUser)}"
+																	value="Suspend/Unsuspend" /> <h:link value="Update"
+																	outcome="EditClient.xhtm">
+																	<f:param name="idClient" value="#{u.idUser}" />
+																</h:link></td>
+
+														</tr>
+
+
+													</ui:repeat>
+												</tbody>
+											</table>
+										</div>
+
+									</h:panelGrid>
+
+
+								</h:form>
 							</div>
-							
+
 						</div>
 					</div>
 

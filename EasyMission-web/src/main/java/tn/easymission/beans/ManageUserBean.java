@@ -56,6 +56,8 @@ public class ManageUserBean {
 	private String location;
 	private boolean agentVisible=false;
 	private boolean clientVisible=false;
+	private String searchAjaxInput;
+	private List<Agent> aG;
 	
 	int i=0;	
     int j=0;
@@ -67,6 +69,18 @@ public class ManageUserBean {
 	LocalUser myService;
 
 	
+	public String getSearchAjaxInput() {
+		return searchAjaxInput;
+	}
+
+
+
+	public void setSearchAjaxInput(String searchAjaxInput) {
+		this.searchAjaxInput = searchAjaxInput;
+	}
+
+
+
 	public boolean isAgentVisible() {
 		return agentVisible;
 	}
@@ -100,6 +114,18 @@ public class ManageUserBean {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+
+
+	public List<Agent> getaG() {
+		return aG;
+	}
+
+
+
+	public void setaG(List<Agent> aG) {
+		this.aG = aG;
 	}
 
 
@@ -669,6 +695,24 @@ public class ManageUserBean {
       facesContext.responseComplete();
 
       
+ }
+ public void Update()
+ { 
+	 List<Agent> agents = new ArrayList<>();
+	 agents=myService.getAgentsbyName(searchAjaxInput);
+	 getAgents().clear();
+	 for (Agent a : agents) {
+		 getAgents().add(a);
+		 
+	}
+	 
+ }
+ public List<Agent> getListAgentByName(String name)
+ {
+	 return  myService.getAgentsbyName(name);
+ }
+ public void handleKeyEvent() {
+     searchAjaxInput = searchAjaxInput.toUpperCase();
  }
 	
 	

@@ -218,10 +218,13 @@ public class UserService implements LocalUser {
 		}
 		
 	}
-
+//	select postalcarrier from reward p
+//	inner join p. postalcarrier
+//	where p.id = :postOfficeId
+//	and postalcarrier.area.code = :areaCode
 	@Override
 	public List<Agent> getAgents() {
-		Query  query = em.createQuery("Select a from Agent a ", Agent.class);
+		Query  query = em.createQuery("select distinct u from Agent u left join fetch u.offres");
 		List<Agent> list=query.getResultList();
 		return list;
 	}
@@ -231,6 +234,15 @@ public class UserService implements LocalUser {
 		Query  query = em.createQuery("Select c from Client c ", Client.class);
 		List<Client> list=query.getResultList();
 		return list;
+	}
+
+	@Override
+	public List<Agent> getAgentsbyName(String name) {
+		Query  query = em.createQuery("Select a from Agent a where a.location like :name", Agent.class);
+		query.setParameter("name", name);
+		List<Agent> list=query.getResultList();
+		
+		return  list;
 	}
 
 }
