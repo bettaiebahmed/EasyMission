@@ -47,3 +47,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 EasyMission-web/src/main/webapp/Admin/BackendLayout/gestionService.xhtml
+*.jar
+EasyMission-ear/target/maven-archiver/pom.properties
